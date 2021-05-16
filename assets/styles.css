@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.bm-stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  background: #000;
+  background-image: url('./img/cocktail-pink.svg');
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  transition: background-position 0.125s;
+}
+
+@media (min-width: 768px) {
+  .bm-stage {
+    background-size: 50%;
+    background-position: 80% 35%;
+  }
+}
+
+@media (max-width: 425px) {
+  .bm-stage {
+    padding: 0 32px;
+    background-position: center 27.5%;
+  }
+}
+
+.bm-content-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  transform: translateY(120%);
+}
+
+
+@media (min-width: 786px) {
+  .bm-content-wrapper {
+    transform: translateY(0);
+  }
+}
+
+.bm-bullish-tagline {
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: calc(46px+ 34* ((100vw - 320px)/ 680));
+  color: white;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+  text-align: left;
+  -webkit-box-decoration-break: clone;
+}
+
+.bm-logo {
+  width: 100%;
+  max-height: 100%;
+}
+
+.bm-spotlight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(
+    circle at var(--x, 20%) var(--y, 20%),
+    transparent 5vmax,
+    rgba(0, 0, 0, 0.96) 20vmax
+  );
+}
+
+@keyframes pulsate {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+.bm-rainbow {
+  background-color: #e62bf2;
+  background-image: linear-gradient(90deg, #e62bf2 0%, #46e58d 50%, #e62bf2 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  animation: pulsate 4s ease infinite alternate-reverse;
+}
+
+@keyframes shadow-across {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: -20% center;
+  }
+}
+
+.bm-text-shadow {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 8%, rgba(255, 255, 255, 1) 85%);
+  background-size: 300% 300%;
+  background-repeat: none;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  animation: shadow-across 14s ease infinite alternate;
+}
+
+.footer {
+  font-size: 12px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 1);
+  width: 100%;
+  padding: 40px 10%;
+  position: fixed;
+  bottom: 0;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0,1);
+}
+
+
+@media (max-width: 425px) {
+  .footer {
+    padding: 40px 32px;
+  }
+}
